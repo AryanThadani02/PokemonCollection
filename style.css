@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@600&family=Roboto&display=swap');
+
+/* ALL */
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #d0c8c8;
+}
+
+/* WRAPS BODY */
+.content-wrapper {
+    display: block;
+    margin: auto;
+    max-height: 1700px;
+    max-width: 1700px;
+}
+
+/* BODY */
+body {
+    background-image: url(cdf2a5aa0a40469d23873928f128336f.jpg);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+/* PAGE TITLE */
+h1 {
+    font-family: 'Grandstander', cursive;
+    text-align: center;
+    font-size: 70px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    color: #fff !important;
+}
+
+/* SEARCH BAR*/
+#pokemon-search-form {
+    text-align: center;
+}
+
+/*TYPE FILTER*/
+#pokemon-type-filter {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color:black;
+}
+
+.form-spacers{
+    height: 10px;
+}
+
+.type-filter{
+    margin: 10px;;
+}
+
+#pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* flip card container  */
+.flip-card {
+    margin: 20px;
+    width: 200px;
+    height: 275px;
+    text-align: center;
+    justify-content: center;
+    perspective: 1000px;
+    opacity: 0.95;
+}
+
+/*  position the front and back side */
+.flip-card-inner {
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #181717;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+
+.front-pokemon-card, .back-pokemon-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front-pokemon-card {
+    z-index: 2;
+    transform: rotateY(0);
+}
+
+.back-pokemon-card {
+    transform: rotateY(180deg);
+}
+
+.front-pokemon-image, .back-pokemon-image {
+    position: relative;
+    top: 50px;
+}
+
+.front-poke-id, .back-poke-id {
+    position: relative;
+    top: -100px;
+    width: 100%;
+    background-color: whitesmoke;
+    color: #555555;
+    justify-content: left;
+}
+
+.front-pokemon-type {
+    width: fit-content;
+    padding: 5px;
+    background-color: rgb(33, 51, 48);
+    border-radius: 10px;
+    position: relative;
+    /* left: 75px; */
+    margin: auto;
+    bottom: -12.5px;
+    font-size: small;
+}
+
+#grass {
+    background-color: #9bcc50;
+}
+
+#bug {
+    background-color: #729f3f;
+}
+
+#fire {
+    background-color :#fd7d24;
+}
+
+#water {
+    background-color: #4592c4;
+}
+
+#ice {
+    background-color: #51c4e7;
+}
+
+#electric {
+    background-color: #eed535;
+}
+
+#psychic {
+    background-color:  #f366b9;
+}
+
+
+#fairy {
+    background-color: #fdb9e9;
+}
+
+#ghost {
+    background-color: #302b2b;
+}
+
+#ground {
+    background-color: #f7de3f;
+}
+
+#poison {
+    background-color: #b97fc9;
+}
+
+#fairy {
+    background-color: #fdb9e9;
+}
+
+#normal {
+    background-color: #a4acaf;
+}
+
+#dragon {
+    background-color: goldenrod;
+}
+
+#fighting {
+    background-color: #d56723;
+}
+
+#rock {
+    background-color: #524300;
+}
+#dark {
+    background-color: #000000;
+}
+.upper_part{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.upper_part .type-filter{
+  padding: 10px 20px;
+  background-color: #000000;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+}
+.upper_part .filter_input{
+  font-size: 15px;
+  border: none;
+  padding: 10px 20px;
+  background-color: #000000;
+  border-radius: 20px;
+}
+.upper_part .reset{
+  font-size: 15px;
+  border: none;
+  padding: 10px 20px;
+  background-color: #000000;
+  border-radius: 20px;
+}
+.upper_part .name_filter{
+  font-size: 15px;
+  border: none;
+  padding: 10px 20px;
+  background-color: #000000;
+  border-radius: 20px;
+}
+.upper_part .name_filter::placeholder{
+  color: #fff;
+}
