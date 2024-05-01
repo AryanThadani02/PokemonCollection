@@ -13,7 +13,7 @@ let uniqueTypes = new Set();
 
 const fetchPokemon = () => {
     const promises = [];
-    for(let i=1; i<= 102; i++){
+    for(let i=1; i<= 150; i++){
         const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${i}`;
         console.log(pokemonURL);
         promises.push(fetch(pokemonURL).then(response => response.json()))
@@ -90,6 +90,7 @@ function createPokemonCard(pokemon) {
 
     const frontPokeName = document.createElement('h2')
     frontPokeName.innerHTML = `<a href="/pokemon.html?pokemon_id=${pokemon.pokemon_id}">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>`
+    frontPokeName.classList.add("front-name")
 
     const frontPokeID = document.createElement('p')
     frontPokeID.textContent = `#${pokemon.pokemon_id}`
