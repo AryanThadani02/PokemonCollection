@@ -11,7 +11,7 @@ let uniqueTypes = new Set();
 
 const fetchPokemon = () => {
     const promises = [];
-    for(let i=1; i<= 10; i++){
+    for(let i=1; i<= 204; i++){
         const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${i}`;
         console.log(pokemonURL);
         promises.push(fetch(pokemonURL).then(response => response.json()))
