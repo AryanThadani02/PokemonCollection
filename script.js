@@ -5,13 +5,15 @@ const typeSearch = typeParams.get('type');
 const pokedex = document.getElementById('pokedex');
 const pokemonSearchForm  = document.querySelector('#pokemon-search-form');
 const pokemonTypeFilter = document.querySelector('.type-filter');
+AOS.init();
+
 
 let pokemonArray = [];
 let uniqueTypes = new Set();
 
 const fetchPokemon = () => {
     const promises = [];
-    for(let i=1; i<= 204; i++){
+    for(let i=1; i<= 102; i++){
         const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${i}`;
         console.log(pokemonURL);
         promises.push(fetch(pokemonURL).then(response => response.json()))
@@ -67,17 +69,21 @@ function createPokemonCard(pokemon) {
     flipCard.classList.add("flip-card")
     flipCard.id = `${pokemon.name}`
     pokedex.append(flipCard)
+    flipCard.setAttribute('data-aos', 'zoom-out-down')
+    flipCard.setAttribute('data-aos-duration', '1000')
     
     // front & back container
     const flipCardInner = document.createElement("div")
     flipCardInner.classList.add("flip-card-inner")
     flipCardInner.id = `${pokemon.type}`
     flipCard.append(flipCardInner)
-
+    
     // front of card
+    
     const frontCard = document.createElement("div")
     frontCard.classList.add('front-pokemon-card')
-
+    
+    
     const frontImage = document.createElement('img')
     frontImage.src = `${pokemon.frontImage}`
     frontImage.classList.add("front-pokemon-image")
@@ -101,6 +107,7 @@ function createPokemonCard(pokemon) {
     // back of card
     const backCard = document.createElement("div")
     backCard.classList.add('back-pokemon-card')
+    // frontCard.setAttribute('data-aos', 'fade-up')
 
     const backImage = document.createElement('img')
     backImage.src = `${pokemon.frontImage}`
